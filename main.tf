@@ -30,7 +30,11 @@ resource "aws_route_table" "olivertaylor-rt" {
 
 
 
+resource "aws_key_pair" "deployer" {
+    key_name = "olivertaylor-awskey"
+    public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCCUIDKvvF1DQJJLbCEw1EAv98rSMUavXRJ/XK8pt9wCmSON3j9j8zI+spCEL0I52ktoiOtkqqiPioj2s/FVEG0dzQJW3yDVdc7nK62iar8MYWjH2+Y/kQRWWjgvQA0sINTridH1RV7/ddrkajQGhg8e5Sp0hqSfsm1NBnb6Agt5DUayJZZbw5/7I/AxNjTGb2kmsvCWWA2/ZuNyacMbZwDxr7Mil4sN3ojSXW7D4Fl4Ktjo4sl86+0ZNmLEOp7H20MZKCijW+xa4r4wcugUVcCuApeI0M42aRX0IAzXYwqUfWhgOgam5K3FcSwk2Xv3lRlrKnvLwt+6K8CV+t7nuXr"
 
+}
 
 module "application-tier" {
   name="olivertaylor-app"
@@ -56,7 +60,7 @@ module "application-tier" {
     from_port = 22
     to_port = 22
     protocol = "tcp"
-    cidr_blocks = "3.145.42.69"
+    cidr_blocks = "3.129.210.142/32"
 }]
 }
 

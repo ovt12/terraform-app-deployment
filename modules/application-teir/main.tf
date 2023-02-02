@@ -53,12 +53,12 @@ resource "aws_instance" "app" {
     Name = "${var.name}"
   }
 
-  connection {
-      type        = "ssh"
-      host        = "149.36.18.119"
-      user        = "ubuntu"
-      private_key = file(".ssh/olivertaylor-awskey.pem")
-      timeout     = "4m"
-   }
+  # connection {
+  #     type        = "ssh"
+  #     host        = "149.36.18.119"
+  #     user        = "ubuntu"
+  #     private_key = file(".ssh/olivertaylor-awskey.pem")
+  #     timeout     = "4m"
+  #  }
 }
 
